@@ -1,8 +1,3 @@
-<?php
-require "./data/dischi.php";
-$logoHeader = 'assets/spotify_logo.png';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,28 +11,28 @@ $logoHeader = 'assets/spotify_logo.png';
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
-<body> 
-  <?php include 'components/header.php' ?>
-
+<body>
   <header>
     <img class="logoHeader" src="assets/spotify_logo.png" alt="Spotify_logo">
   </header>
   <main>
-    <div class="cardContainer container-lg mt-4 pb-4">
+    <div class="container-lg mt-4 pb-4" id="cardContainerVue">
       <div class="row row-cols-5 g-4">
-        <!-- ciclo foreach to select a singol album inside the collection -->
-        <?php
-        foreach($disc_Collection as $singolDisc){
-        ?>
-          <div class="col d-flex">
-            <?php include 'components/card.php' ?>
+        <div class="col d-flex"
+          v-for="(album, i) in albumCollectionVue" :key="i"
+        >
+        <div class="card p-4">
+          <img class="card-img-top" :src="album.poster" :alt="album.title">
+          <div class="card-body text-center p-0">
+            <h5 class="card_discTitle card-title fs-3 pt-5 pb-3">{{album.title}}</h5>
+            <h6 class="card_singer fs-4 mb-0">{{album.author}}</h6>
+            <h6 class="card_year fs-5">{{album.year}}</h6>
           </div>
-        <?php
-          }
-        ?>
+          </div>
+        </div>
       </div>
     </div>
   </main>
-
+  <script src="main.js"></script>
 </body>
 </html>
