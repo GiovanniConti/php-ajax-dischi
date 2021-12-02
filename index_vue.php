@@ -14,7 +14,7 @@
 <body>
   <?php include 'components/header.php' ?>
   <main>
-    <div class="container-lg mt-4 pb-4" id="cardContainerVue">
+    <div class="cardContainer container-lg mt-4 pb-4" id="cardContainerVue">
       <div class="row row-cols-5 g-4">
         <div class="col d-flex"
           v-for="(album, i) in albumCollectionVue" :key="i"
