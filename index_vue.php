@@ -12,9 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  <header>
-    <img class="logoHeader" src="assets/spotify_logo.png" alt="Spotify_logo">
-  </header>
+  <?php include 'components/header.php' ?>
   <main>
     <div class="container-lg mt-4 pb-4" id="cardContainerVue">
       <div class="row row-cols-5 g-4">

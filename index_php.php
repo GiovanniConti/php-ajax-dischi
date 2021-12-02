@@ -1,6 +1,5 @@
 <?php
 require "./data/dischi.php";
-$logoHeader = 'assets/spotify_logo.png';
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +18,6 @@ $logoHeader = 'assets/spotify_logo.png';
 <body> 
   <?php include 'components/header.php' ?>
 
-  <header>
-    <img class="logoHeader" src="assets/spotify_logo.png" alt="Spotify_logo">
-  </header>
   <main>
     <div class="cardContainer container-lg mt-4 pb-4">
       <div class="row row-cols-5 g-4">
